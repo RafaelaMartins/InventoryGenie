@@ -1,0 +1,17 @@
+<div>
+    <h2>Cadastro</h2>
+    <form>
+        <input  type="text" id="name" value="">
+        <input type="email" id="email" value="">
+        <input type="password" id="password" value="">
+        <input type="submit" value="Cadastrar">
+    </form>
+    <div>
+        <button (click)="fazerRequisicao()">Fazer Requisição</button>
+        <ul *ngIf="data">
+          <li *ngFor="let item of data">{{ item }}</li>
+        </ul>
+      </div>
+      
+      
+</div>
