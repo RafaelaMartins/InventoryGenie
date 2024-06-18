@@ -1,28 +1,28 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http'; // Importe o HttpClient
+import { CommonModule } from '@angular/common';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [],
+  imports: [MatButtonModule, CommonModule, ReactiveFormsModule,  MatDividerModule, MatIconModule],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss'
 })
 export class FormComponent {
-  data: any; // Variável para armazenar os dados da requisição
-
-  constructor(private http: HttpClient) {} // Injeção do HttpClient
-
-  fazerRequisicao() {
-    this.http.get('https://servicodados.ibge.gov.br/api/v1/localidades/distritos')
-      .subscribe((response) => {
-        this.data = response; // Armazena os dados da resposta na variável data
-        console.log(response)
-      }, (error) => {
-        console.error('Erro:', error); // Trata erros
-      });
   
-  }
-
+  public registerForm = new FormGroup({
+    name: new FormControl(''),
+    email: new FormControl(''),
+    password: new FormControl('')
+  });
+  
+  // ToDo: OLHAR COMO FAZENVIO DE DADOS PARA BACK
+  // public register() {
+  //   this.registerForm.
+  // }
 }
 
