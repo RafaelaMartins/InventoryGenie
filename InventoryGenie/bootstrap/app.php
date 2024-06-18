@@ -40,6 +40,7 @@ $app->configure('database');
 |
 */
 
+
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
     App\Exceptions\Handler::class
