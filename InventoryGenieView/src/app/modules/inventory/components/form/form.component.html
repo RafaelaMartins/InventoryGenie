@@ -1,0 +1,11 @@
+
+<section class="container">
+  <h2>Cadastro de usuário</h2>
+  <form [formGroup]="registerForm" method="get">
+    <input placeholder="Nome: " type="text" formControlName = "name"/>
+    <input placeholder="E-mail:" type="email" formControlEmail = "email"/>
+    <input placeholder="Senha: " type="password" formControlPassword = "password"/>
+    <button class="button-primary">Cadastrar</button>
+  </form>
+
+</section>
